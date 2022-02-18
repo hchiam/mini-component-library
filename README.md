@@ -1,5 +1,7 @@
 # Component Library Workshop
 
+(Note to self: Testing Voiceover on Mac? Run storybook http://localhost:6006 on Chrome, not on Firefox.)
+
 In this workshop, we'll build 3 components from scratch:
 
 1. ProgressBar
