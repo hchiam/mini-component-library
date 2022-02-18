@@ -21,11 +21,11 @@ import ProgressBar, { ProgressBarSizes } from "./ProgressBar";
   }}
 />
 
-export const Examples = () => (
+export const Examples = (args) => (
   <>
     <p>Small:</p>
     <br />
-    <ProgressBar value={53} size={ProgressBarSizes.SMALL} />
+    <ProgressBar {...args} />
     <br />
     <p>Medium:</p>
     <br />
@@ -45,6 +45,6 @@ export const Examples = () => (
 
 # ProgressBar
 
-<Story name="Default">
-  <Examples />
+<Story name="Default" args={{ value: 53, size: ProgressBarSizes.SMALL }}>
+  {Examples.bind({})}
 </Story>

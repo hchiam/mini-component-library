@@ -13,7 +13,6 @@ const ProgressBar = ({ value, size }) => {
       aria-valuemin="0"
       aria-valuemax="100"
       size={size}
-      value={value}
     >
       <Bar value={value}></Bar>
     </SizedProgressBar>
@@ -21,15 +20,24 @@ const ProgressBar = ({ value, size }) => {
 };
 
 const SizedProgressBar = styled.div`
-  height: ${(p) => p.size};
-  padding: ${(p) => (p.size === ProgressBarSizes.LARGE ? "4px" : null)};
+  height: ${(p) => handleSize(p.size)};
+  padding: ${(p) =>
+    handleSize(p.size) === ProgressBarSizes.LARGE ? "4px" : null};
   background: ${COLORS.transparentGray15};
   box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
   border-radius: 8px;
   width: 370px;
-  height: ${(p) => p.size};
+  height: ${(p) => handleSize(p.size)};
   overflow: hidden;
 `;
+
+function handleSize(size) {
+  if (size in ProgressBarSizes) return size;
+  if (size === "small") return ProgressBarSizes.SMALL;
+  if (size === "medium") return ProgressBarSizes.MEDIUM;
+  if (size === "large") return ProgressBarSizes.LARGE;
+  return size;
+}
 
 const Bar = styled.div`
   display: block;
