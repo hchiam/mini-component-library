@@ -56,7 +56,7 @@ const CustomVisibleArea = styled.div`
   ${StyledSelect}:focus + &,
   ${StyledSelect}:hover + & {
     background: #c0c0c0;
-    color: black;
+    color: ${COLORS.black};
   }
 
   /* &:after {
@@ -96,9 +96,9 @@ const StyledIcon = styled(Icon)`
   /* background: blue; */
   /* color: white; */
 
-  ${StyledSelect}:focus + &,
-  ${StyledSelect}:hover + & {
-    color: grey;
+  ${StyledSelect}:focus + ${CustomVisibleArea} &,
+  ${StyledSelect}:hover + ${CustomVisibleArea} & {
+    color: ${COLORS.black};
   }
 `;
 
